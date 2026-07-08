@@ -1,7 +1,188 @@
-About Dataset
-The term rockfall describes the rapid displacement of a large, usually meter-sized block of rock down-slope, triggered by, for example, endogenic or exogenic events like impacts, quakes or rainfall. In a remote sensing context, the term rockfall is also being used to describe the characteristic geomorphic deposit of a rockfall event that can be identified from an air- or space-borne perspective, i.e., the combination of a displaced boulder and the track it carved into the slope substrate while bouncing, rolling, and sliding over the surface (also called boulder with track' orrolling boulder').
+# 🌍 Planetary Rockfall Detection using Deep Learning
 
-In planetary science, the spatial distribution and frequency of rockfalls provide insights into the global erosional state and activity of a planetary body while their tracks act as tools that allow for the remote estimation of the surface strength properties of yet unexplored regions in preparation of future ground exploration missions. Due to their small physical size (meters), the identification and mapping of rockfalls in planetary satellite imagery is challenging and very time-consuming, however. For this reason, Bickel et al. (2018) and Bickel et al. (2020) trained convolutional neural networks to automate rockfall mapping in lunar and martian satellite imagery. Parts of the unpublished datasets used for earlier work have now been complemented with newly labeled data to create a well-balanced dataset of 2,822 lunar and martian rockfall labels (which we call `RMaM-2020' --- [R]ockfall [Ma]rs [M]oon [2020], 416 MB in total, available here: https://edmond.mpdl.mpg.de/file.xhtml?fileId=101756&version=1.0) that can be used for deep learning and other data science applications. Here, balanced means that the labels have been derived from imagery with a wide and continuous range of properties like spatial resolution, solar illumination, and others. So far, this dataset has been used to analyze the benefits of multi-domain learning on rockfall detector performance (Mars & Moon vs. Moon-only or Mars-only), but there are numerous other (non-planetary science) applications such as for featurization, feature or target recognition (aircraft/spacecraft autonomy), and data augmentation experiments.
+A deep learning-based computer vision project for automated rockfall detection on high-resolution satellite imagery of **Mars** and the **Moon** using Convolutional Neural Networks (CNNs).
 
-Link for Rockfall Detection on Mars (on kaggle): https://www.kaggle.com/datasets/yash92328/rockfall-detection-on-mars
-Link for Rockfall Dtection on Moon (on kaggle): https://www.kaggle.com/datasets/yash92328/rockfall-detection-on-moon
+This project was developed to investigate the application of deep learning for planetary surface analysis by identifying and classifying rockfall regions from orbital imagery. Automated rockfall detection can support geological studies, planetary exploration, and reduce the effort required for manual image inspection.
+
+---
+
+## 📖 Overview
+
+Rockfalls are important geological indicators that provide insights into planetary surface evolution and terrain stability. Detecting these regions manually from thousands of satellite images is time-consuming and challenging.
+
+This project proposes an automated deep learning pipeline that preprocesses planetary images, generates labelled datasets, trains a Convolutional Neural Network (CNN), and predicts the presence of rockfall regions on Mars and Moon imagery.
+
+---
+
+## 🎯 Objectives
+
+- Detect rockfall regions from planetary satellite images.
+- Develop a complete preprocessing pipeline for image preparation.
+- Train and evaluate a CNN model for rockfall classification.
+- Compare model performance on Mars and Moon datasets.
+
+---
+## 📂 Dataset
+
+This project uses the **RMaM-2020 (Rockfall Mars Moon 2020)** dataset, a publicly available benchmark dataset for automated rockfall detection in planetary satellite imagery.
+
+The dataset consists of high-resolution orbital images from **Mars** and the **Moon**, with manually annotated rockfall regions. It was developed to support research in deep learning-based rockfall detection and planetary surface analysis.
+
+### Why Rockfall Detection?
+
+Rockfalls are geological features formed when large rocks move down a slope due to events such as impacts, moonquakes, marsquakes, or erosion. From satellite imagery, they appear as a combination of a displaced boulder and the track left behind during its movement.
+
+Automatically detecting these features is important because it helps researchers:
+
+- Understand planetary surface evolution
+- Study erosion and geological activity
+- Estimate surface properties remotely
+- Support future robotic and human exploration missions
+- Reduce the need for time-consuming manual image inspection
+
+### Dataset Characteristics
+
+- 🌕 Moon and 🔴 Mars imagery
+- **2,822 manually labelled rockfall instances**
+- Balanced across different terrains, illumination conditions, and spatial resolutions
+- Designed specifically for deep learning and computer vision applications
+
+### Preprocessing
+
+Before training, the following preprocessing steps were applied:
+
+- Image resizing
+- Duplicate image handling
+- Missing value removal
+- Bounding box generation
+- Coordinate normalization
+- Gaussian blur for noise reduction
+- Data augmentation
+
+### Dataset Sources
+
+- Mars Dataset (Kaggle)
+- Moon Dataset (Kaggle)
+
+The original RMaM-2020 dataset was introduced by Bickel et al. for deep learning-based planetary rockfall detection.
+---
+
+## 🏗️ Project Pipeline
+
+```
+Satellite Images
+        │
+        ▼
+Image Preprocessing
+        │
+        ▼
+Bounding Box Generation
+        │
+        ▼
+Data Augmentation
+        │
+        ▼
+CNN Model Training
+        │
+        ▼
+Prediction
+        │
+        ▼
+Performance Evaluation
+```
+
+---
+
+## 🛠️ Tech Stack
+
+- Python
+- TensorFlow
+- NumPy
+- Pandas
+- OpenCV
+- Matplotlib
+- Google Colab
+- Kaggle
+
+---
+
+## 🧠 Model
+
+A Sequential Convolutional Neural Network (CNN) was implemented using TensorFlow for binary rockfall classification.
+
+The workflow consists of:
+
+- Image preprocessing
+- Dataset preparation
+- CNN training
+- Model evaluation
+- Prediction on unseen images
+
+The Sequential CNN architecture was selected after experimentation and achieved better performance than the VGG16 baseline for this dataset.
+
+---
+
+## 📊 Results
+
+| Dataset | Accuracy |
+|----------|----------|
+| 🌕 Moon | **94.00%** |
+| 🔴 Mars | **80.13%** |
+
+The model demonstrated strong performance on Moon imagery and achieved satisfactory results on the more challenging Mars dataset.
+
+---
+
+## 📁 Repository Structure
+
+```
+planetary-rockfall-detection/
+│
+├── notebooks/
+├── src/
+├── data/
+├── models/
+├── results/
+├── images/
+├── README.md
+├── requirements.txt
+└── LICENSE
+```
+
+---
+
+## 🚀 Future Improvements
+
+Possible extensions include:
+
+- Transfer Learning using EfficientNet or ResNet
+- YOLO-based object detection
+- Vision Transformers (ViT)
+- Semantic segmentation with U-Net
+- Hyperparameter optimization
+- Model deployment using FastAPI
+- Docker containerization
+
+---
+
+## 📚 References
+
+- Bickel et al., *Deep Learning-Driven Detection and Mapping of Rockfalls on Mars*, IEEE JSTARS, 2020.
+- Bickel et al., *A Labelled Image Dataset for Deep Learning-Driven Rockfall Detection on the Moon and Mars*, Frontiers in Remote Sensing, 2021.
+
+---
+
+## 👩‍💻 Author
+
+**Sakshi Singh**
+
+M.Sc. Computer Science  
+Paderborn University, Germany
+
+**Areas of Interest**
+
+- Machine Learning
+- Computer Vision
+- Data Science
+- Data Engineering
+- Trustworthy AI
