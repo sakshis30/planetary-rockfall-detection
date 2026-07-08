@@ -6,11 +6,13 @@ This project was developed to investigate the application of deep learning for p
 
 ---
 
-## 📖 Overview
+## 📖 Project Overview
 
-Rockfalls are important geological indicators that provide insights into planetary surface evolution and terrain stability. Detecting these regions manually from thousands of satellite images is time-consuming and challenging.
+Planetary rockfall detection is a challenging computer vision task due to the small size of rockfall features and the large volume of satellite imagery that must be analyzed.
 
-This project proposes an automated deep learning pipeline that preprocesses planetary images, generates labelled datasets, trains a Convolutional Neural Network (CNN), and predicts the presence of rockfall regions on Mars and Moon imagery.
+In this project, a deep learning pipeline was developed to automatically identify rockfall regions on high-resolution images of the Moon and Mars. The workflow includes image preprocessing, data augmentation, CNN-based model training, and performance evaluation on two planetary datasets.
+
+The project demonstrates how deep learning techniques can be applied to planetary science for automated geological feature detection, reducing manual effort while enabling scalable analysis of planetary surfaces.
 
 ---
 
