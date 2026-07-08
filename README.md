@@ -174,6 +174,16 @@ Possible extensions include:
 
 ---
 
+## 💡 Key Takeaways
+
+During this project, I gained practical experience in:
+
+- Building end-to-end computer vision pipelines
+- Image preprocessing and augmentation techniques
+- Working with imbalanced datasets
+- Training and evaluating CNN models using TensorFlow
+- Applying deep learning to remote sensing and planetary imagery
+
 ## 👩‍💻 Author
 
 **Sakshi Singh**
